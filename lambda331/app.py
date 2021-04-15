@@ -10,7 +10,7 @@ def create_app():
 
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'lambda331/sqlite:///db.sqlite3'
     DB.init_app(app)
 
     @app.route('/')
