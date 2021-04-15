@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<title>Satoshi Says</title>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Satoshi Says (because Simon is now in the Cayman Islands)</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="nav navbar-nav ml-auto">
+        </div>
+      </ul>
+    </nav>
+
+<h2>Bitcoin vs Ethereum</h2>
+
+    <p>Select below to predict which user is more likely to say a given tweet, Adam Back, Satoshi Nakamoto candidate-- or --Vitalik Buterin, Ethereum creator</p>
+ <label>Twitter User A:</label>
+        <select name="screen_name_a">
+            <option value="adamback" selected="true">@adam3us</option>
+            <option value="vitalikbuterin">@VitalikButerin</option>
+        </select>
+        <br>
+
+        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+        <label>Twitter User B:</label>
+        <select name="screen_name_b">
+            <option value="adamback">@adam3us</option>
+            <option value="vitalikbuterin" selected="true">@VitalikButerin</option>
+          </select>
+        <br>
+
+
+
+<br>
+<input id="tweet_text_input" type=text" placeholder="Tweet to classify">
+<br>
+<button id="tweet_submit">
+    Classify tweet
+</button>
+<span id="classify_response"></span>
+<br>
+</body>
+<script src="../static/tweet.js"></script>
+</html>
