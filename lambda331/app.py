@@ -1,16 +1,17 @@
+from decouple import config
 from flask import Flask, render_template, request
 import json
-from data_model import DB
-from twitter import upsert_user
+from .data_model import DB
+from .twitter import upsert_user
 from os import path
-from ml import predict_most_likely_author
+from .ml import predict_most_likely_author
 
 
 def create_app():
 
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'lambda331/sqlite:///db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     DB.init_app(app)
 
     @app.route('/')
@@ -19,7 +20,7 @@ def create_app():
             DB.create_all()
             DB.session.commit()
             pass
-        with open('templates/landing.json') as f:
+        with open('lambda331/landing.json') as f:
             args = json.load(f)
         return render_template('base.html', **args)
 
@@ -51,6 +52,5 @@ def create_app():
                                     message=message)
 
     return app
-
 
 

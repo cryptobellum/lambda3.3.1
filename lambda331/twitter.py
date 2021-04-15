@@ -1,9 +1,8 @@
+from decouple import config
 import tweepy
-import os
-from data_model import DB, User, Tweet
-
-twitter_api_key = os.environ['TWITTER_API_KEY']
-twitter_api_secret = os.environ['TWITTER_API_KEY_SECRET']
+from .data_model import DB, User, Tweet
+twitter_api_key = config('TWITTER_API_KEY')
+twitter_api_secret = config('TWITTER_API_KEY_SECRET')
 twitter_auth = tweepy.OAuthHandler(twitter_api_key, twitter_api_secret)
 twitter_api = tweepy.API(twitter_auth)
 
